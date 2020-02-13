@@ -30,7 +30,7 @@ async def killer():
 
 def test_simple():
 
-    config_simple(g_config, "./test_core/config_manager/json_data")
+    config_simple(g_config, "./utests/core_config/json_data")
 
 
 def test_async(loop=None):

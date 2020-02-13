@@ -19,8 +19,8 @@ lock = Lock()
 #from core.asyn.asyn import run_in_executer
 
 import logging
-log = logging.getLogger("MOD")
-log.setLevel(logging.DEBUG)
+log = logging.getLogger("CONF")
+log.setLevel(logging.INFO)
 
 
 class ConfigManager:

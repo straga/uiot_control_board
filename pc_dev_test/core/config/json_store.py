@@ -22,7 +22,7 @@ import builtins
 
 import logging
 log = logging.getLogger("FJSON")
-log.setLevel(logging.DEBUG)
+log.setLevel(logging.INFO)
 
 
 def isdir(dir_path):
