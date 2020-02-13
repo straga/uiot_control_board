@@ -1,5 +1,6 @@
 # Default ignored files
 #**/.repo/**
+**__pycache__**
 **/u_db/**
 **/u_emu/**
 **/u_test/**
