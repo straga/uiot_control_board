@@ -1,0 +1,7 @@
+# Default ignored files
+#**/.repo/**
+**/u_db/**
+**/u_emu/**
+**/u_test/**
+*/temp
+link to *
