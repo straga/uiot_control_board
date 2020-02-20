@@ -1,0 +1,12 @@
+{
+  "board": {
+    "_schema" : "board_cfg",
+    "name": "default",
+    "board": "PC",
+    "hostname": "pcdev.local",
+    "uid": "888888888",
+    "topic": "dev/pc_dev",
+    "init": 0
+  }
+
+}

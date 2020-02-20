@@ -1,0 +1,64 @@
+{
+
+  "wifi_ap": {
+    "_schema" : "wifi_sta_cfg",
+    "name": "bwifi",
+    "ssid": "bwifi",
+    "passwd": "bwifipwd12",
+    "active": true
+  },
+
+  "wifi_ap2": {
+    "_schema" : "wifi_sta_cfg",
+    "name": "TP-LINK_0942",
+    "ssid": "TP-LINK_0942",
+    "passwd": "bwififipwd12",
+    "active": true
+  },
+
+  "wifi_ap3": {
+    "_schema" : "wifi_sta_cfg",
+    "name": "TP-LINK_4542",
+    "ssid": "TP-LINK_4542",
+    "passwd": "bwifipwd12",
+    "active": true
+  },
+
+
+  "wifi_sta": {
+    "_schema" : "wifi_ap_cfg",
+    "name": "wifi",
+    "essid": "esp32_dev",
+    "channel": 11,
+    "hidden": "false",
+    "password": "ap12345678dev",
+    "authmode": 3,
+    "active": true,
+    "delay": 360
+  },
+
+  "wifi_sta2": {
+    "_schema" : "wifi_ap_cfg",
+    "name": "wifi1",
+    "essid": "esp32_dev",
+    "channel": 11,
+    "hidden": "false",
+    "password": "ap12345678dev",
+    "authmode": 3,
+    "active": true,
+    "delay": 360
+  },
+
+  "wifi_sta3": {
+    "_schema" : "wifi_ap_cfg",
+    "name": "wifi2",
+    "essid": "esp32_dev",
+    "channel": 11,
+    "hidden": "false",
+    "password": "ap12345678dev",
+    "authmode": 3,
+    "active": false,
+    "delay": 360
+  }
+
+}

@@ -1,0 +1,10 @@
+{
+
+  "ftp_cfg": {
+    "_schema" : "telnet_cfg",
+    "name": "default",
+    "port": 23,
+    "pswd": "micro"
+  }
+
+}

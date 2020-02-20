@@ -1,0 +1,40 @@
+{
+
+  "mod_board": {
+    "_schema": "board_mod",
+    "name": "board",
+    "status": "",
+    "seq": 1,
+    "active": true
+  },
+
+  "mod_net": {
+    "_schema": "board_mod",
+    "name": "net",
+    "status": "",
+    "seq": 2,
+    "active": true,
+    "depend": ["board"]
+  },
+
+  "mod_ftp": {
+    "_schema": "board_mod",
+    "name": "ftp",
+    "status": "",
+    "seq": 3,
+    "active": true,
+    "depend": ["board", "net"]
+  },
+
+
+  "mod_telnet": {
+    "_schema": "board_mod",
+    "name": "telnet",
+    "status": "",
+    "seq": 4,
+    "active": true,
+    "depend": ["board", "net"]
+  }
+
+
+}
