@@ -1,0 +1,12 @@
+{
+  "board": {
+    "_schema" : "board_cfg",
+    "name": "default",
+    "board": "ESP32_dev",
+    "hostname": "esp32.local",
+    "uid": "",
+    "topic": "dev/esp32_dev",
+    "init": 0
+  }
+
+}
