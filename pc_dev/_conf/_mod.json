@@ -34,6 +34,25 @@
     "seq": 4,
     "active": true,
     "depend": ["board", "net"]
+  },
+
+  "mod_mqtt": {
+    "_schema": "board_mod",
+    "name": "mqtt",
+    "status": "",
+    "seq": 5,
+    "active": true,
+    "depend": ["net_sta"]
+  },
+
+
+  "mod_message": {
+    "_schema": "board_mod",
+    "name": "message",
+    "status": "",
+    "seq": 5,
+    "active": true,
+    "depend": ["board"]
   }
 
 

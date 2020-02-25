@@ -32,18 +32,17 @@ print("-- work_path: {}".format(work_root))
 print("-- Start Gen Lib")
 
 
-SYMLINK = False
+SYMLINK = True
 
 gen_libs = Gen(SYMLINK).gen_libs
 
-# main PC
-gen_libs(src_lib=path_platfrorm, src_path="pc", src="main.py", dst_lib=work_root, dst_path="")
+# main
+gen_libs(src_lib=path_platfrorm, src_path="esp32", src="main.py", dst_lib=work_root, dst_path="")
 
 
 # Platform PC
-gen_libs(src_lib=path_core, src_path="_board/pc", src="platform.py", dst_lib=work_core_path, dst_path="")
-gen_libs(src_lib=path_core, src_path="_board/pc", src="u_os.py", dst_lib=work_core_path, dst_path="")
-
+gen_libs(src_lib=path_core, src_path="_board/esp32", src="platform.py", dst_lib=work_core_path, dst_path="")
+gen_libs(src_lib=path_core, src_path="_board/esp32", src="u_os.py", dst_lib=work_core_path, dst_path="")
 
 # core
 gen_libs(src_lib=path_core, src_path="asyn", src="asyn.py", dst_lib=work_core_path, dst_path="asyn")
@@ -56,21 +55,27 @@ gen_libs(src_lib=path_core, src_path="mbus", src="mbus.py", dst_lib=work_core_pa
 gen_libs(src_lib=path_core, src_path="loader", src="loader.py", dst_lib=work_core_path, dst_path="loader")
 gen_libs(src_lib=path_core, src_path="loader", src="board_mod.json", dst_lib=work_core_path, dst_path="loader")
 
+
+
 # lib
 ## logging
 gen_libs(src_lib=path_app_lib, src_path="", src="logging.py", dst_lib=work_lib_path, dst_path="")
-## HW EMU
-gen_libs(src_lib=path_app_lib, src_path="esp", src="", dst_lib=work_lib_path, dst_path="esp")
-gen_libs(src_lib=path_app_lib, src_path="esp32", src="", dst_lib=work_lib_path, dst_path="esp32")
-gen_libs(src_lib=path_app_lib, src_path="machine", src="", dst_lib=work_lib_path, dst_path="machine")
-gen_libs(src_lib=path_app_lib, src_path="network", src="", dst_lib=work_lib_path, dst_path="network")
 
+## uasyncio
+gen_libs(src_lib=path_ulib, src_path="uasyncio/uasyncio", src="__init__.py", dst_lib=work_lib_path, dst_path="uasyncio")
+gen_libs(src_lib=path_ulib, src_path="uasyncio.core/uasyncio", src="core.py", dst_lib=work_lib_path, dst_path="uasyncio")
+gen_libs(src_lib=path_ulib, src_path="uasyncio.queues/uasyncio", src="queues.py", dst_lib=work_lib_path, dst_path="uasyncio")
+
+## collections
+gen_libs(src_lib=path_ulib, src_path="collections.deque/collections", src="deque.py", dst_lib=work_lib_path, dst_path="collections")
 
 # MOD
 gen_libs(src_lib=path_app_mod, src_path="board", src="", dst_lib=work_mod_path, dst_path="board")
 gen_libs(src_lib=path_app_mod, src_path="net", src="", dst_lib=work_mod_path, dst_path="net")
 gen_libs(src_lib=path_app_mod, src_path="ftp", src="", dst_lib=work_mod_path, dst_path="ftp")
 gen_libs(src_lib=path_app_mod, src_path="telnet", src="", dst_lib=work_mod_path, dst_path="telnet")
+gen_libs(src_lib=path_app_mod, src_path="mqtt", src="", dst_lib=work_mod_path, dst_path="mqtt")
+
 
 
 #     #PC
