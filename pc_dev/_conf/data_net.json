@@ -28,7 +28,7 @@
   "wifi_sta": {
     "_schema" : "wifi_ap_cfg",
     "name": "wifi",
-    "essid": "esp32_dev",
+    "ssid": "esp32_dev",
     "channel": 11,
     "hidden": "false",
     "password": "ap12345678dev",
@@ -40,7 +40,7 @@
   "wifi_sta2": {
     "_schema" : "wifi_ap_cfg",
     "name": "wifi1",
-    "essid": "esp32_dev",
+    "ssid": "esp32_dev",
     "channel": 11,
     "hidden": "false",
     "password": "ap12345678dev",
@@ -52,7 +52,7 @@
   "wifi_sta3": {
     "_schema" : "wifi_ap_cfg",
     "name": "wifi2",
-    "essid": "esp32_dev",
+    "ssid": "esp32_dev",
     "channel": 11,
     "hidden": "false",
     "password": "ap12345678dev",

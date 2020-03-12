@@ -31,7 +31,7 @@
     "name": "telnet",
     "status": "",
     "seq": 4,
-    "active": true,
+    "active": false,
     "depend": ["board", "net"]
   },
 
@@ -43,5 +43,79 @@
     "seq": 5,
     "active": true,
     "depend": ["net_sta"]
+  },
+
+    "mod_http": {
+    "_schema": "board_mod",
+    "name": "http",
+    "status": "",
+    "seq": 5,
+    "active": true,
+    "depend": ["net"]
+  },
+
+
+    "mod_ota_updater": {
+    "_schema": "board_mod",
+    "name": "ota_updater",
+    "status": "",
+    "seq": 5,
+    "active": true,
+    "depend": ["http"]
+  },
+
+  "mod_pin": {
+    "_schema": "board_mod",
+    "name": "pin",
+    "status": "",
+    "seq": 5,
+    "active": true,
+    "depend": ["board"]
+  },
+
+  "mod_switch": {
+    "_schema": "board_mod",
+    "name": "switch",
+    "status": "",
+    "seq": 5,
+    "active": true,
+    "depend": ["pin"]
+  },
+
+  "mod_binary_sensor": {
+    "_schema": "board_mod",
+    "name": "binary_sensor",
+    "status": "",
+    "seq": 5,
+    "active": true,
+    "depend": ["pin"]
+  },
+
+  "mod_control": {
+    "_schema": "board_mod",
+    "name": "control_led",
+    "status": "",
+    "seq": 5,
+    "active": true,
+    "depend": ["pin", "binary_sensor", "switch"]
+  },
+
+  "mod_control_2": {
+    "_schema": "board_mod",
+    "name": "control_touch",
+    "status": "",
+    "seq": 5,
+    "active": true,
+    "depend": ["pin", "binary_sensor", "switch", "control_led"]
+  },
+
+
+    "mod_message": {
+    "_schema": "board_mod",
+    "name": "message",
+    "status": "",
+    "seq": 5,
+    "active": true,
+    "depend": ["board"]
   }
 }

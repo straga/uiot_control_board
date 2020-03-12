@@ -1,100 +1,112 @@
 
-import uasyncio as asyncio
-import machine, _thread
-import uos
-import gc
+import sys
 
-# WDT
-async def run_wdt():
-    wdt = machine.WDT(timeout=120000)
-    print("WDT RUN")
-    while True:
-        wdt.feed()
-        gc.collect()
-        # print("WDT RESET")
-        await asyncio.sleep(10)
+part_name = "."
 
-# Lloader
-async def loader():
+sys.path.append("{}/".format(part_name))
+sys.path.append("{}/{}".format(part_name, "lib"))
+sys.path.append("{}/{}".format(part_name, "app"))
 
-    # VFS SIZE
-    fs_stat = uos.statvfs('/')
-    fs_size = fs_stat[0] * fs_stat[2]
-    fs_free = fs_stat[0] * fs_stat[3]
-    print("File System Size {:,} - Free Space {:,}".format(fs_size, fs_free))
+import _thread
+import asyncio
 
-    part_name = uos.getcwd()
-    print(part_name)
-    #Import
-    from core.mbus.mbus import MbusManager
-    from core.config.config import ConfigManager
+from core.mbus.mbus import MbusManager
+from core.config.config import ConfigManager
 
-    # MBUS
-    print("MBUS START")
-    _mbus = MbusManager()
-    _mbus.start()
+import logging
 
-    # CONF
-    print("CONF START")
-    _conf = ConfigManager("./u_config")
+log = logging.getLogger('MAIN')
+logging.basicConfig(level=logging.DEBUG)
 
 
-    # Core/Modules
+async def loader(core_mbus, core_conf):
+
     from core.loader.loader import uCore
     from core.loader.loader import uModule
 
-    print("CORE: init")
+    log.info("CORE: init")
     global g_core
-    g_core = uCore(_mbus, _conf)
+    g_core = uCore(core_mbus, core_conf)
     g_core.part_name = part_name
 
-    print("Module: Init")
+    log.info("Module: Init")
     _umod = uModule(g_core)
 
-    print("Module: List")
+    log.info("Module: List")
     await _umod.module_list()
 
-    print("Module: Schema")
+    log.info("Module: Schema")
     await _umod.module_schema()
 
-    print("Module: Data")
+    log.info("Module: Data")
     await _umod.module_data()
 
-    print("Module: Act")
+    log.info("Module: Act")
     await _umod.module_act()
-
-
 
 
 def main():
 
+    # AsyncIO
     loop = asyncio.get_event_loop()
-    _ = _thread.stack_size(8 * 1024)
-    _thread.start_new_thread(loop.run_forever, ())
+    _ = _thread.stack_size(100 * 1024)
 
     # loop.set_debug(True)
+    # logging.getLogger("asyncio").basicConfig(level=logging.DEBUG)
 
-    loop.create_task(run_wdt())
-    loop.create_task(loader())
+    # MBUS
+    log.info("MBUS START")
+    _mbus = MbusManager()
+    _mbus.start()
+
+    # CONF
+    log.info("CONF START")
+    _conf = ConfigManager("./u_config")
+
+    _thread.start_new_thread(loop.run_forever, ())
+
+    loop.create_task(loader(_mbus, _conf))
+
+
+def clean_emu():
+
+    import os
+    from pathlib import Path
+    folder = './u_emu'
+
+    _folder = Path(folder)
+    if not _folder.exists():
+        _folder.mkdir()
+
+
+    for the_file in os.listdir(folder):
+        file_path = os.path.join(folder, the_file)
+        try:
+            if os.path.isfile(file_path):
+                os.unlink(file_path)
+        except Exception as e:
+            print(e)
 
 
 
 if __name__ == '__main__':
+    log.info("MAIN")
 
-    print("MAIN")
-    main()
-
-
-    #if error - run manualy in UART:
-    # import network
-    # sta = network.WLAN(network.STA_IF)
-    # sta.active(True)
-    # sta.connect("ssid", "psswd")
+    # log = logging.getLogger("FJSON")
+    # log.setLevel(logging.DEBUG)
     #
-    # import ftp
-    # ftp.ftpserver()
+    #
+    # log = logging.getLogger("CONF")
+    # log.setLevel(logging.DEBUG)
+    #
+    #
+    # log = logging.getLogger("LOADER")
+    # log.setLevel(logging.DEBUG)
+    #
+    # log = logging.getLogger("MBUS")
+    # log.setLevel(logging.DEBUG)
 
 
-
-
+    clean_emu()
+    main()
 

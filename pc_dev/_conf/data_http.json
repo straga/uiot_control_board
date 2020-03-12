@@ -1,0 +1,27 @@
+{
+  "http_cfg": {
+    "_schema" : "http_cfg",
+    "name": "default",
+    "addr": "0.0.0.0",
+    "port": 8082,
+    "path": "./www"
+  },
+
+  "rpc_route_cfg": {
+    "_schema" : "http_route_cfg",
+    "name": "rpc",
+    "route": "/rpc",
+    "handler": "route_rpc",
+    "active": true
+  },
+
+  "flash_route_cfg": {
+    "_schema" : "http_route_cfg",
+    "name": "flash",
+    "route": "/flash",
+    "handler": "route_flash",
+    "active": true
+  }
+}
+
+
