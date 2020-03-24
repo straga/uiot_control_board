@@ -1,0 +1,41 @@
+{
+  "sta_cfg": {
+    "_schema" : "_schema",
+    "name": "wifi_sta_cfg",
+    "sch": [
+        ["name", ["str",""] ],
+        ["ssid", ["str", ""] ],
+        ["passwd", ["str", ""]],
+        ["active", ["bool", true]]
+    ]
+  },
+
+  "ap_cfg": {
+    "_schema" : "_schema",
+    "name": "wifi_ap_cfg",
+    "sch": [
+        ["name", ["str",""] ],
+        ["ssid", ["str", ""] ],
+        ["channel", ["int", 11]],
+        ["hidden", ["bool", false]],
+        ["password", ["str", ",ap12345678dev"]],
+        ["authmode", ["int", 3]],
+        ["delay", ["int", 360]],
+        ["active", ["bool", false]]
+    ]
+  },
+
+  "scan_cfg": {
+    "_schema" : "_schema",
+    "name": "wifi_scan_map",
+    "sch": [
+        ["name", ["str",""] ],
+        ["ssid", ["str", ""] ],
+        ["bssid", ["str", ""]],
+        ["RSSI", ["int", 0]],
+        ["channel", ["int", 0]],
+        ["authmode", ["int", 0]],
+        ["hidden", ["int", 0]]
+    ]
+  }
+}

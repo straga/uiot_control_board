@@ -2,24 +2,24 @@
 
   "wifi_ap": {
     "_schema" : "wifi_sta_cfg",
-    "name": "wifi_1",
-    "ssid": "TPLINK2345",
-    "passwd": "pwsswd1234",
+    "name": "home",
+    "ssid": "WIFI1",
+    "passwd": "WIF1",
     "active": true
   },
 
   "wifi_ap2": {
     "_schema" : "wifi_sta_cfg",
-    "name": "wifi_2",
-    "ssid": "TPLINK9867",
-    "passwd": "pwsswd1234",
+    "name": "home2",
+    "ssid": "WIFI2",
+    "passwd": "WIFI2",
     "active": true
   },
 
   "wifi_sta": {
     "_schema" : "wifi_ap_cfg",
     "name": "esp32_dev",
-    "essid": "esp32_dev",
+    "ssid": "esp32_dev",
     "channel": 11,
     "hidden": "false",
     "password": "ap12345678dev",

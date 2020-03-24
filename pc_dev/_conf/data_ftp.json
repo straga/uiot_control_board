@@ -8,7 +8,7 @@
     "dport": 26,
     "usr": "micro",
     "passwd": "micro",
-    "anonym": true,
+    "anonym": false,
     "active": true
 
   }

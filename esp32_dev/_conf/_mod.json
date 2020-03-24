@@ -41,7 +41,7 @@
     "name": "mqtt",
     "status": "",
     "seq": 5,
-    "active": true,
+    "active": false,
     "depend": ["net_sta"]
   },
 
@@ -80,42 +80,7 @@
     "seq": 5,
     "active": true,
     "depend": ["pin"]
-  },
-
-  "mod_binary_sensor": {
-    "_schema": "board_mod",
-    "name": "binary_sensor",
-    "status": "",
-    "seq": 5,
-    "active": true,
-    "depend": ["pin"]
-  },
-
-  "mod_control": {
-    "_schema": "board_mod",
-    "name": "control_led",
-    "status": "",
-    "seq": 5,
-    "active": true,
-    "depend": ["pin", "binary_sensor", "switch"]
-  },
-
-  "mod_control_2": {
-    "_schema": "board_mod",
-    "name": "control_touch",
-    "status": "",
-    "seq": 5,
-    "active": true,
-    "depend": ["pin", "binary_sensor", "switch", "control_led"]
-  },
-
-
-    "mod_message": {
-    "_schema": "board_mod",
-    "name": "message",
-    "status": "",
-    "seq": 5,
-    "active": true,
-    "depend": ["board"]
   }
+
+
 }

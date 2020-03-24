@@ -3,7 +3,7 @@
   "mqtt_cfg": {
     "_schema" : "mqtt_cfg",
     "name": "local_1",
-    "addr": "127.0.0.1",
+    "addr": "eclipse.mqtt.com",
     "port": 1883,
     "seq": 0,
     "active": true
@@ -12,7 +12,7 @@
   "mqtt_cfg_2": {
     "_schema" : "mqtt_cfg",
     "name": "local_2",
-    "addr": "127.0.0.1",
+    "addr": "eclipse.mqtt.com",
     "port": 1883,
     "seq": 1,
     "active": false

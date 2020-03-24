@@ -1,0 +1,31 @@
+{
+
+  "pin_L22": {
+    "_schema" : "pin_cfg",
+    "name": "l22",
+    "number": 22,
+    "inverted": false,
+    "mode": "OUT",
+    "pcb_name": "LED_22"
+  },
+
+  "pin_R18": {
+    "_schema" : "pin_cfg",
+    "name": "r18",
+    "number": 18,
+    "inverted": false,
+    "mode": "OUT",
+    "pcb_name": "Relay_18"
+  },
+
+  "pin_R19": {
+    "_schema" : "pin_cfg",
+    "name": "r19",
+    "number": 19,
+    "inverted": false,
+    "mode": "OUT",
+    "pcb_name": "Relay_19"
+  }
+
+}
+
