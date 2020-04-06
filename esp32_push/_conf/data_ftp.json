@@ -1,0 +1,14 @@
+{
+
+  "ftp_cfg": {
+    "_schema" : "ftp_cfg",
+    "name": "default",
+    "cport": 25,
+    "dport": 26,
+    "usr": "micro",
+    "passwd": "micro",
+    "anonym": true,
+    "active": true
+  }
+
+}

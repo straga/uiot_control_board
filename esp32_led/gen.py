@@ -32,7 +32,7 @@ print("-- work_path: {}".format(work_root))
 print("-- Start Gen Lib")
 
 
-SYMLINK = False
+SYMLINK = True
 
 gen_libs = Gen(SYMLINK).gen_libs
 

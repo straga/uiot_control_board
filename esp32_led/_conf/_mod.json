@@ -21,20 +21,20 @@
     "_schema": "board_mod",
     "name": "ftp",
     "status": "",
-    "seq": 3,
+    "seq": 2,
     "active": true,
-    "depend": ["board", "net"]
+    "depend": ["net"]
   },
-
 
   "mod_telnet": {
     "_schema": "board_mod",
     "name": "telnet",
     "status": "",
     "seq": 4,
-    "active": true,
+    "active": false,
     "depend": ["board", "net"]
   },
+
 
   "mod_mqtt": {
     "_schema": "board_mod",
@@ -45,17 +45,7 @@
     "depend": ["net_sta"]
   },
 
-
-  "mod_message": {
-    "_schema": "board_mod",
-    "name": "message",
-    "status": "",
-    "seq": 5,
-    "active": true,
-    "depend": ["board"]
-  },
-
-  "mod_http": {
+    "mod_http": {
     "_schema": "board_mod",
     "name": "http",
     "status": "",
@@ -64,12 +54,13 @@
     "depend": ["net"]
   },
 
-  "mod_ota_updater": {
+
+    "mod_ota_updater": {
     "_schema": "board_mod",
     "name": "ota_updater",
     "status": "",
     "seq": 5,
-    "active": true,
+    "active": false,
     "depend": ["http"]
   },
 
@@ -100,48 +91,13 @@
     "depend": ["pin"]
   },
 
-  "mod_hw_control": {
+  "mod_ctrl_kitchen_light": {
     "_schema": "board_mod",
-    "name": "hw_control",
+    "name": "ctrl_kitchen_light",
     "status": "",
     "seq": 5,
     "active": true,
-    "depend": ["pin"]
-  },
-
-    "mod_control": {
-    "_schema": "board_mod",
-    "name": "control_led",
-    "status": "",
-    "seq": 5,
-    "active": true,
-    "depend": ["pin", "binary_sensor", "switch"]
-  },
-
-  "mod_control_2": {
-    "_schema": "board_mod",
-    "name": "control_touch",
-    "status": "",
-    "seq": 5,
-    "active": true,
-    "depend": ["pin", "binary_sensor", "switch", "control_led"]
-  },
-
-  "mod_web_control": {
-    "_schema": "board_mod",
-    "name": "web_control",
-    "status": "",
-    "seq": 5,
-    "active": true,
-    "depend": ["http"]
-  },
-
-  "mod_control_mqtt": {
-    "_schema": "board_mod",
-    "name": "control_mqtt",
-    "status": "",
-    "seq": 5,
-    "active": true,
-    "depend": ["mqtt"]
+    "depend": ["switch"]
   }
+
 }

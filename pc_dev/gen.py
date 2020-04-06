@@ -32,7 +32,7 @@ print("-- work_path: {}".format(work_root))
 print("-- Start Gen Lib")
 
 
-SYMLINK = False
+SYMLINK = True
 
 gen_libs = Gen(SYMLINK).gen_libs
 
@@ -54,7 +54,6 @@ gen_libs(src_lib=path_core, src_path="config", src="json_store.py", dst_lib=work
 gen_libs(src_lib=path_core, src_path="mbus", src="mbus.py", dst_lib=work_core_path, dst_path="mbus")
 
 gen_libs(src_lib=path_core, src_path="loader", src="loader.py", dst_lib=work_core_path, dst_path="loader")
-gen_libs(src_lib=path_core, src_path="loader", src="board_mod.json", dst_lib=work_core_path, dst_path="loader")
 
 gen_libs(src_lib=path_core, src_path="thread", src="thread.py", dst_lib=work_core_path, dst_path="thread")
 
@@ -86,8 +85,10 @@ gen_libs(src_lib=path_app_mod, src_path="ota_updater", src="", dst_lib=work_mod_
 gen_libs(src_lib=path_app_mod, src_path="pin", src="", dst_lib=work_mod_path, dst_path="pin")
 gen_libs(src_lib=path_app_mod, src_path="switch", src="", dst_lib=work_mod_path, dst_path="switch")
 gen_libs(src_lib=path_app_mod, src_path="binary_sensor", src="", dst_lib=work_mod_path, dst_path="binary_sensor")
+
 gen_libs(src_lib=path_app_mod, src_path="control_led", src="", dst_lib=work_mod_path, dst_path="control_led")
 gen_libs(src_lib=path_app_mod, src_path="control_touch", src="", dst_lib=work_mod_path, dst_path="control_touch")
+gen_libs(src_lib=path_app_mod, src_path="control_mqtt", src="", dst_lib=work_mod_path, dst_path="control_mqtt")
 
 gen_libs(src_lib=path_app_mod, src_path="hw_control", src="", dst_lib=work_mod_path, dst_path="hw_control")
 gen_libs(src_lib=path_app_mod, src_path="web_control", src="", dst_lib=work_mod_path, dst_path="web_control")

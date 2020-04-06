@@ -56,15 +56,16 @@ gen_libs(src_lib=path_core, src_path="thread", src="thread.py", dst_lib=work_cor
 # lib
 ## logging
 gen_libs(src_lib=path_app_lib, src_path="", src="logging.py", dst_lib=work_lib_path, dst_path="")
+## threading
+gen_libs(src_lib=path_ulib, src_path="threading", src="threading.py", dst_lib=work_lib_path, dst_path="")
 
 ## uasyncio
-gen_libs(src_lib=path_platfrorm, src_path="uasyncio", src="", dst_lib=work_lib_path, dst_path="uasyncio")
+gen_libs(src_lib=path_platfrorm, src_path="uasyncio", src="task.py", dst_lib=work_lib_path, dst_path="uasyncio")
+gen_libs(src_lib=path_platfrorm, src_path="uasyncio", src="queues.py", dst_lib=work_lib_path, dst_path="uasyncio")
 
 ## collections
 gen_libs(src_lib=path_ulib, src_path="collections.deque/collections", src="deque.py", dst_lib=work_lib_path, dst_path="collections")
 
-## threading
-gen_libs(src_lib=path_ulib, src_path="threading", src="threading.py", dst_lib=work_lib_path, dst_path="")
 
 
 # MOD
